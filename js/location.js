@@ -27,7 +27,6 @@
           const value0 = longitude;
           const value1 = latitude;
 
-          //https://www.google.com/maps/embed/v1/view?key=AIzaSyDYHAtmiMZxzvHWEGDn-QIMfqGkE3qSNU8&center=${longitude},${latitude}
           const map = `https://www.google.com/maps/dir//${longitude}+${latitude}/@${longitude},${latitude},16z`;
           const mapsrc = `https://www.google.com/maps/embed/v1/view?key=${key}&center=${longitude},${latitude}&zoom=20`;
 
