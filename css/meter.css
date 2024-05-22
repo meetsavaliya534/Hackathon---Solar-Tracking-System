@@ -1,0 +1,103 @@
+progress, meter{
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+/*gets rid of all pseudo elements*/
+::-webkit-progress-inner-element, ::-webkit-progress-bar, ::-webkit-progress-value{
+  display:none;
+}
+
+::-webkit-meter-bar, ::-webkit-meter-optimum-value, ::-webkit-meter-suboptimum-value,::-webkit-meter-even-less-good-value { 
+  display: none;
+}
+
+::-moz-progress-bar, ::-moz-meter-bar{
+  background:transparent;
+}
+
+/* overlays text*/
+.voltage:after{
+  content:attr(value) "V";
+  position:absolute; 
+  top:8px; right:8px; bottom:8px; left:8px;
+  background:white;
+  border-radius:50%;
+  color:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:700;
+}
+
+/*using a conical gradient to create the doughnut chart  */
+  .voltage {
+    position: relative;
+    width: 160px; height:160px;
+    border-radius: 60%;
+    --fill: calc(var(--progress) * 4.16%);
+    background: conic-gradient(CornflowerBlue var(--fill), lightgrey 0);
+  }
+  
+/* just to change the fill color*/  
+  meter.voltage{
+  background: conic-gradient(green  var(--fill), lightgrey 0);
+}
+
+.amp:after{
+  content:attr(value) "mA";
+  position:absolute; 
+  top:8px; right:8px; bottom:8px; left:8px;
+  background:white;
+  border-radius:50%;
+  color:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:700;
+}
+
+/*using a conical gradient to create the doughnut chart  */
+  .amp {
+    position: relative;
+    width: 160px; height:160px;
+    border-radius: 60%;
+    --fill: calc(var(--progress) * 5%);
+    background: conic-gradient(CornflowerBlue var(--fill), lightgrey 0);
+  }
+  
+/* just to change the fill color*/  
+  meter.amp{
+  background: conic-gradient(darkblue  var(--fill), lightgrey 0);
+}
+
+.watt:after{
+  content:attr(value) "mW";
+  position:absolute; 
+  top:8px; right:8px; bottom:8px; left:8px;
+  background:white;
+  border-radius:50%;
+  color:black;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:2rem;
+  font-weight:700;
+}
+
+/*using a conical gradient to create the doughnut chart  */
+  .watt {
+    position: relative;
+    width: 160px; height:160px;
+    border-radius: 60%;
+    --fill: calc(var(--progress) * 0.833%);
+    background: conic-gradient(CornflowerBlue var(--fill), lightgrey 0);
+  }
+  
+/* just to change the fill color*/  
+  meter.watt{
+  background: conic-gradient(tomato  var(--fill), lightgrey 0);
+}
